@@ -3,12 +3,13 @@ android {
         // Enabling multidex support.
         multiDexEnabled true
     }
-    configurations { 
-        //all*.exclude group: 'com.google.android.gms'
-        //all*.exclude group: 'com.android.support', module: 'support-v4'
+    dexOptions {
+        jumboMode true
+        incremental true 
+	javaMaxHeapSize "4g"
     }
 }
 
 dependencies {
-  compile 'com.android.support:multidex:1.0.0'
+  compile 'com.android.support:multidex:1.0.1'
 }
